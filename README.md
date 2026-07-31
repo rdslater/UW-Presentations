@@ -4,7 +4,7 @@ Models built at UW-Madison
 ## Strong v Weak Labeling--the first A-EYE paper!
 Our first major publication for the A-Eye unit.  I had the initial concept of doing regression to predict area given we had the areas and not the segmentation.  Our group (not me) produced detailed segmentation of Geographic Atrophy on Fundus Autoflouresence, and I then developed a segmentation model. I built and trained both types of models (pretrained + fine tuning). The figures were generated from my code and most of the statistical analysis was done by myself (reviewed by our statistician). The "Strong" model was later deployed via a Python App (developed by me) and the results of that clinical trial are described in another presentation.
 Our director wrote the paper proper.  The models and research were developed by me independantly.
-[Published Paper](Strong\ v\ Weak\ Labeling.pdf)
+[Published Paper](Strong%20v%20Weak%20Labeling.pdf)
 
 ## ARVO2023Poster_FINAL_v.pptx
 ![ARVO2023Poster_FINAL_v](ARVO2023Poster_FINAL_v.jpg)
