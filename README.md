@@ -16,6 +16,10 @@ I built a model for segmenting 3D volumes known as OCT (Optical Coherence Tomogr
 
 I did all of the model training and anlysis for this model.   I used a CNN to predict the area of a lesion without actually segmenting it (Nominally called "weak labels").  This was done as the reading center had area data but had lost the segmentation files.  I used EffcientNet (pretrain + fine tuned) to train this.  The short version of this is as you get more and more samples the final result improves.  Actually working in reverse as you shrink your data size, the model tends to perform worse AND more variable.
 
+## 16 Class Classifier for Retina Photos
+![Seven Field and Laterality Model](SevenFieldARVO2022PosterforPrint.jpg)
+This was a model I built around 2022 to classify which field a given photo was from. It Retina Photography the 7 field is standard to capture all of the eye. Often we get zip files and it is not immedately obvious which photo is which field. In addition both the left and right eyes can be contained in a volume and also includes a zoomed out image called the "Red Reflex". Thus this is a 16 class classifier that predicts both the laterality and which of the seven fields (or reflex) the image belongs too. Accuracy was 88%. But I also found that if the prediction had low confidence (below 99%) it was likely an error and could be thrown back for human review. This was a HUGE speedup in labeling this data.
+
 ## RobertSlaterARVO2022Poster.pdf
 ![IVAN Clarity](RobertSlaterARVO2022Poster.jpg)
 
@@ -23,6 +27,8 @@ This was an early autoencoder attempt to try and reduce blur for retina images. 
 
 ## Robert_GA-precursors_ARVO2025_Final.pdf
 ![GA-precursors_ARVO2025_Final](Robert_GA-precursors_ARVO2025_Final.jpg)
+
+
 
 This was our first multimodal attempt at a model.  I did the high level architecture and design while the 2nd Author (Postdoc) did the actual training under my guidance.  We tried to use Grad-Cam maps and secondary infor to improve our prediction of Geographic Atrophy--an uncurable eye disease, so predicting progression is VERY important.  Rather sadly it turned out the image-only model was better performing than the multimodal.
 
