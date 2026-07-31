@@ -3,8 +3,12 @@ Models built at UW-Madison
 
 ## Strong v Weak Labeling--the first A-EYE paper!
 Our first major publication for the A-Eye unit.  I had the initial concept of doing regression to predict area given we had the areas and not the segmentation.  Our group (not me) produced detailed segmentation of Geographic Atrophy on Fundus Autoflouresence, and I then developed a segmentation model. I built and trained both types of models (pretrained + fine tuning). The figures were generated from my code and most of the statistical analysis was done by myself (reviewed by our statistician). The "Strong" model was later deployed via a Python App (developed by me) and the results of that clinical trial are described in another presentation.
-Our director wrote the paper proper.  The models and research were developed by me independantly.
+Our director wrote the paper proper.  The models and research were developed by me independently.
 [Published Paper](Strong%20v%20Weak%20Labeling.pdf)
+
+## OCT 3D (kinda!) Segmentation Model
+I built a model for segmenting 3D volumes known as OCT (Optical Coherence Tomography).  This is 3D scan of the eye and shows the different layers of the eye.  One of the most important is the RPE layer.  Damage to this layer causes vision loss.  We had several hundred labeled OCTs and what we really want is an "En Face" map or a top down view of the volume showing where the RPE layer is missing.  To do this I treated the X and Z dimensions and the height and width of a color picture and the Y dimension (looking down) as a color channel which allowed the 2D convolutions to "scan" a column of pixels.  The reason is humans look for "waterfall" effects in the OCT slices where there are bright streaks in the Y dimension.  This presentation was after I acheived an excellent dice score on the test set, and the results were reviewed by human graders to understand where the model was failing.  The "flipping" of a 3D volume and using a 2D Unet was my idea as we had limited GPU capacity and 3d Segmentation is computationally EXPENSIVE.  This works on a laptop!
+![OCT Segmentation Poster](OCT_CLINIC_ARVO poster_Final.jpg)
 
 ## ARVO2023Poster_FINAL_v.pptx
 ![ARVO2023Poster_FINAL_v](ARVO2023Poster_FINAL_v.jpg)
